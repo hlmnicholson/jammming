@@ -7,9 +7,16 @@ class TrackList extends Component {
   render() {
     return (
       <div class="TrackList">
-        <h1>I'm a track</h1>
-        <h1>I'm a track</h1>
-        <h1>I'm a track</h1>
+        {
+          this.props.tracks.map(track => {
+            return <Track key={track.id}
+              name={track.name}
+              artist={track.artist}
+              album={track.album}
+              onAdd={this.props.onAdd}
+            />
+          })
+        }
       </div>
     )
   }
